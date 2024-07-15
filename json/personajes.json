@@ -1,0 +1,92 @@
+[
+  {
+    "Datos1":{ 
+      "Nombre": "Maggie",
+      "Apodo": "La bebe",
+      "Edad":1
+  },
+    "Caracteristicas1":{ 
+    "Velocidad": 6,
+    "Destreza": 3,
+    "Fuerza": 9,
+    "Nivel": 6,
+    "Armadura": 5,
+    "Salud": 100
+  }
+},
+  {
+    "Datos1":{ 
+      "Nombre": "Milhouse",
+      "Apodo": "Cuatro ojos",
+      "Edad":11
+  },
+  "Caracteristicas1":{ 
+    "Velocidad": 5,
+    "Destreza": 3,
+    "Fuerza": 6,
+    "Nivel": 9,
+    "Armadura": 1,
+    "Salud": 100
+  }
+},
+  {
+    "Datos1":{ 
+      "Nombre": "Sr. Burns",
+      "Apodo": "Montgomery Burns",
+      "Edad":90
+  },
+  "Caracteristicas1":{ 
+    "Velocidad": 4,
+    "Destreza": 5,
+    "Fuerza": 4,
+    "Nivel": 7,
+    "Armadura": 6,
+    "Salud": 100
+  }
+},
+  {
+    "Datos1":{ 
+      "Nombre": "Lisa",
+      "Apodo": "Liz",
+      "Edad":8
+  },
+  "Caracteristicas1":{ 
+    "Velocidad": 1,
+    "Destreza": 1,
+    "Fuerza": 9,
+    "Nivel": 9,
+    "Armadura": 9,
+    "Salud": 100
+  }
+},
+  {
+    "Datos1":{ 
+      "Nombre": "Krusty",
+      "Apodo": "Krusty el payaso",
+      "Edad":64
+  },
+  "Caracteristicas1":{ 
+    "Velocidad": 8,
+    "Destreza": 1,
+    "Fuerza": 1,
+    "Nivel": 10,
+    "Armadura": 3,
+    "Salud": 100
+  }
+},
+ { 
+    "Datos1":{ 
+     "Nombre": "Homero",
+     "Apodo": "Hombre pay",
+     "Edad":68
+   },
+   "Caracteristicas1":{ 
+    "Velocidad": 3,
+    "Destreza": 2,
+    "Fuerza": 4,
+    "Nivel": 3,
+    "Armadura": 5,
+    "Salud": 100
+  }
+}
+ ]
