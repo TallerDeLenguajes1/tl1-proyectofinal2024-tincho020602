@@ -1,16 +1,18 @@
+using EventoAleatorio;
+
 namespace EspacioPersonajes
 {
 
-    public class Personaje
+     class Personaje
     {
         public string Nombre { get; set; }
         public string Apodo { get; set; }
         public int Edad { get; set; }
         public int Salud { get; set; }
-        public double Fuerza { get; set; }
+        public int Fuerza { get; set; }
 
         // Constructor
-        public Personaje(string nombre, string apodo, int edad, int salud, double fuerza)
+        public Personaje(string nombre, string apodo, int edad, int salud, int fuerza)
         {
             Nombre = nombre;
             Apodo = apodo;
@@ -28,9 +30,9 @@ namespace EspacioPersonajes
             }
         }
 
-        public void Atacar(Personaje defensor)
+        public int Atacar(Evento eventoAleatorio)
         {
-         
+            return (Fuerza + eventoAleatorio.Efecto);
         }
 
 
