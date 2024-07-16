@@ -12,21 +12,21 @@ namespace LaBatallaDeSpringfield
     // Clase PersonajesJson
     public class PersonajesJson
     {
-        public static void GuardarPersonajes(List<Simpsons> personajes, string archivo)
+        public static void GuardarPersonajes(List<Personaje> personajes, string archivo)
         {
             var opciones = new JsonSerializerOptions { WriteIndented = true };
             string json = JsonSerializer.Serialize(personajes, opciones);
             File.WriteAllText(archivo, json);
         }
 
-        public static List<Simpsons> LeerPersonajes(string archivo)
+        public static List<Personaje> LeerPersonajes(string archivo)
         {
             if (File.Exists(archivo))
             {
                 string json = File.ReadAllText(archivo);
-                return JsonSerializer.Deserialize<List<Simpsons>>(json);
+                return JsonSerializer.Deserialize<List<Personaje>>(json);
             }
-            return new List<Simpsons>();
+            return new List<Personaje>();
         }
 
         public static bool Existe(string archivo)
@@ -38,23 +38,23 @@ namespace LaBatallaDeSpringfield
     // Clase HistorialJson
     public class HistorialJson
     {
-        public static void GuardarGanador(Simpsons ganador, string archivo)
+        public static void GuardarGanador(Personaje ganador, string archivo)
         {
-            List<Simpsons> ganadores = LeerGanadores(archivo);
+            List<Personaje> ganadores = LeerGanadores(archivo);
             ganadores.Add(ganador);
             var opciones = new JsonSerializerOptions { WriteIndented = true };
             string json = JsonSerializer.Serialize(ganadores, opciones);
             File.WriteAllText(archivo, json);
         }
 
-        public static List<Simpsons> LeerGanadores(string archivo)
+        public static List<Personaje> LeerGanadores(string archivo)
         {
             if (File.Exists(archivo))
             {
                 string json = File.ReadAllText(archivo);
-                return JsonSerializer.Deserialize<List<Simpsons>>(json);
+                return JsonSerializer.Deserialize<List<Personaje>>(json);
             }
-            return new List<Simpsons>();
+            return new List<Personaje>();
         }
 
         public static bool Existe(string archivo)
@@ -66,10 +66,10 @@ namespace LaBatallaDeSpringfield
     // Clase Combate
     public class Combate
     {
-        public Simpsons Personaje1 { get; set; }
-        public Simpsons Personaje2 { get; set; }
+        public Personaje Personaje1 { get; set; }
+        public Personaje Personaje2 { get; set; }
 
-        public Combate(Simpsons personaje1, Simpsons personaje2)
+        public Combate(Personaje personaje1, Personaje personaje2)
         {
             Personaje1 = personaje1;
             Personaje2 = personaje2;
@@ -100,7 +100,7 @@ namespace LaBatallaDeSpringfield
             }
         }
 
-        private void MejorarPersonaje(Simpsons ganador)
+        private void MejorarPersonaje(Personaje ganador)
         {
             ganador.Mejorar();
         }
@@ -109,7 +109,7 @@ namespace LaBatallaDeSpringfield
     // Clase EventoAleatorio
     public class EventoAleatorio
     {
-        public static void GenerarEvento(Simpsons personaje)
+        public static void GenerarEvento(Personaje personaje)
         {
             Random random = new Random();
             int evento = random.Next(1, 4);
@@ -137,7 +137,7 @@ namespace LaBatallaDeSpringfield
     {
         static void Main(string[] args)
         {
-            List<Simpsons> personajes;
+            List<Personaje> personajes;
 
             if (PersonajesJson.Existe("personajes.json"))
             {
@@ -145,7 +145,7 @@ namespace LaBatallaDeSpringfield
             }
             else
             {
-                personajes = new List<Simpsons>();
+                personajes = new List<Personaje>();
                 for (int i = 0; i < 10; i++)
                 {
                     personajes.Add(FabricaDePersonajes.CrearPersonajeAleatorio());

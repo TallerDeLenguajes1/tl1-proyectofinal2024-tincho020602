@@ -8,7 +8,7 @@ namespace EspacioFabricaPj
     {
         private static Random random = new Random();
 
-        public static Simpsons CrearPersonajeAleatorio()
+        public static Personaje CrearPersonajeAleatorio()
         {
             string[] nombres = { "Homer", "Bart", "Lisa", "Marge", "Maggie", "Ned", "Mr. Burns", "Apu", "Krusty", "Milhouse" };
             string nombre = nombres[random.Next(nombres.Length)];
@@ -23,7 +23,7 @@ namespace EspacioFabricaPj
             int armadura = random.Next(1, 11);
             int salud = 100;
 
-            return new Simpsons(nombre, apodo, tipo, velocidad, destreza, fuerza, nivel, armadura, salud);
+            return new Personaje(nombre, apodo, tipo, velocidad, destreza, fuerza, nivel, armadura, salud);
         }
     }
 
