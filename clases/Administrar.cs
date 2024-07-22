@@ -20,6 +20,7 @@ class Juego
             Console.WriteLine(opcion);
         }
     }
+    public 
 
 }
     

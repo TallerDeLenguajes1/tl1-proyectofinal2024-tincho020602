@@ -1,92 +1,72 @@
 [
   {
-    "Datos1":{ 
-      "Nombre": "Maggie",
-      "Apodo": "La bebe",
-      "Edad":1
+    "Nombre": "Homer Simpson",
+    "Apodo": "Homero",
+    "Edad": 39,
+    "Salud": 100,
+    "Fuerza": 8
   },
-    "Caracteristicas1":{ 
-    "Velocidad": 6,
-    "Destreza": 3,
-    "Fuerza": 9,
-    "Nivel": 6,
-    "Armadura": 5,
-    "Salud": 100
-  }
-},
   {
-    "Datos1":{ 
-      "Nombre": "Milhouse",
-      "Apodo": "Cuatro ojos",
-      "Edad":11
+    "Nombre": "Bart Simpson",
+    "Apodo": "El Barto",
+    "Edad": 10,
+    "Salud": 90,
+    "Fuerza": 6
   },
-  "Caracteristicas1":{ 
-    "Velocidad": 5,
-    "Destreza": 3,
-    "Fuerza": 6,
-    "Nivel": 9,
-    "Armadura": 1,
-    "Salud": 100
-  }
-},
   {
-    "Datos1":{ 
-      "Nombre": "Sr. Burns",
-      "Apodo": "Montgomery Burns",
-      "Edad":90
+    "Nombre": "Lisa Simpson",
+    "Apodo": "Sabionda",
+    "Edad": 8,
+    "Salud": 85,
+    "Fuerza": 4
   },
-  "Caracteristicas1":{ 
-    "Velocidad": 4,
-    "Destreza": 5,
-    "Fuerza": 4,
-    "Nivel": 7,
-    "Armadura": 6,
-    "Salud": 100
-  }
-},
   {
-    "Datos1":{ 
-      "Nombre": "Lisa",
-      "Apodo": "Liz",
-      "Edad":8
+    "Nombre": "Marge Simpson",
+    "Apodo": "Marj",
+    "Edad": 36,
+    "Salud": 95,
+    "Fuerza": 5
   },
-  "Caracteristicas1":{ 
-    "Velocidad": 1,
-    "Destreza": 1,
-    "Fuerza": 9,
-    "Nivel": 9,
-    "Armadura": 9,
-    "Salud": 100
-  }
-},
   {
-    "Datos1":{ 
-      "Nombre": "Krusty",
-      "Apodo": "Krusty el payaso",
-      "Edad":64
+    "Nombre": "Maggie Simpson",
+    "Apodo": "Mags",
+    "Edad": 1,
+    "Salud": 50,
+    "Fuerza": 2
   },
-  "Caracteristicas1":{ 
-    "Velocidad": 8,
-    "Destreza": 1,
-    "Fuerza": 1,
-    "Nivel": 10,
-    "Armadura": 3,
-    "Salud": 100
+  {
+    "Nombre": "Mr. Burns",
+    "Apodo": "Monty",
+    "Edad": 104,
+    "Salud": 60,
+    "Fuerza": 3
+  },
+  {
+    "Nombre": "Ned Flanders",
+    "Apodo": "Neddy",
+    "Edad": 60,
+    "Salud": 80,
+    "Fuerza": 7
+  },
+  {
+    "Nombre": "Krusty the Clown",
+    "Apodo": "Krusty",
+    "Edad": 55,
+    "Salud": 75,
+    "Fuerza": 6
+  },
+  {
+    "Nombre": "Apu Nahasapeemapetilon",
+    "Apodo": "Apu",
+    "Edad": 45,
+    "Salud": 85,
+    "Fuerza": 6
+  },
+  {
+    "Nombre": "Chief Wiggum",
+    "Apodo": "Wiggum",
+    "Edad": 42,
+    "Salud": 70,
+    "Fuerza": 5
   }
-},
- { 
-    "Datos1":{ 
-     "Nombre": "Homero",
-     "Apodo": "Hombre pay",
-     "Edad":68
-   },
-   "Caracteristicas1":{ 
-    "Velocidad": 3,
-    "Destreza": 2,
-    "Fuerza": 4,
-    "Nivel": 3,
-    "Armadura": 5,
-    "Salud": 100
-  }
-}
- ]
+]

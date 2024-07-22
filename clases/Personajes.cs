@@ -3,7 +3,7 @@ using EventoAleatorio;
 namespace EspacioPersonajes
 {
 
-     class Personaje
+     public class Personaje
     {
         public string Nombre { get; set; }
         public string Apodo { get; set; }
@@ -34,6 +34,12 @@ namespace EspacioPersonajes
         {
             return (Fuerza + eventoAleatorio.Efecto);
         }
+
+        //-----------
+         public void aumentarNivel(int masFuerza, int masSalud){
+        Fuerza+=masFuerza;
+        Salud+=masSalud;
+    }
 
 
     }
