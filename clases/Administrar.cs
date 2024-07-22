@@ -101,7 +101,35 @@ namespace EspacioJuego
 
         }
 
-        public void Partida1vs1(){
+        public void IniciarJuego(){
+            int opcion=0;
+            string opcionIngresada;
+            do{ 
+            do{
+                MostrarMenu([" 1)1vs1","2)1vsCpu","3)historial","4)Salir"]);
+                 Console.WriteLine("Opcion: ");
+                 opcionIngresada = Console.ReadLine();
+             } while (!(int.TryParse(opcionIngresada, out opcion)) && !(opcion >= 1 && opcion <= 4));
+             switch(opcion){
+                case 1:
+                   Partida1vs1();
+                break;
+                case 2:
+                 Console.WriteLine("Opcion 2 ");
+                 break;
+                 case 3:
+                 Console.WriteLine("Opcion 3 ");
+                 break;
+                 case 4:
+                 Console.WriteLine("Opcion 4 ");
+                 break;
+                 default:
+                 break;
+             }
+            }while(opcion!=4);
+        }
+
+        private void Partida1vs1(){
             ElegirPersonaje(2);
             Duelo();
         }
