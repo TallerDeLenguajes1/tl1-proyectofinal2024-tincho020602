@@ -101,12 +101,23 @@ namespace EspacioJuego
 
         }
 
+        public void FinDelDuelo(){
+            if(Jugador1.EstaVivo()){
+                Console.WriteLine("Gano Jugador1");
+                Jugador1.RegenerarVida();
+            }else{
+                Console.WriteLine("Gano Jugador2");
+                Jugador2.RegenerarVida();
+            }
+        }
+
         public void IniciarJuego(){
             int opcion=0;
             string opcionIngresada;
             do{ 
             do{
-                MostrarMenu([" 1)1vs1","2)1vsCpu","3)historial","4)Salir"]);
+                Console.Clear();
+                MostrarMenu([" 1)1vs1","2)1vsCpu","3)historial","0)Salir"]);
                  Console.WriteLine("Opcion: ");
                  opcionIngresada = Console.ReadLine();
              } while (!(int.TryParse(opcionIngresada, out opcion)) && !(opcion >= 1 && opcion <= 4));
@@ -115,7 +126,7 @@ namespace EspacioJuego
                    Partida1vs1();
                 break;
                 case 2:
-                 Console.WriteLine("Opcion 2 ");
+                 Partida1vsCPU();
                  break;
                  case 3:
                  Console.WriteLine("Opcion 3 ");
@@ -134,6 +145,20 @@ namespace EspacioJuego
             Duelo();
         }
 
+      //  private void GenerarJugadorRandom(){
+      //      Jugador2=
+      //  }
+
+        private void Partida1vsCPU(){
+            ElegirPersonaje(1);
+            List<Personaje> listaPersonajeDuelo=ListaDePersonajes;
+            while(listaPersonajeDuelo.Count()>0 && Jugador1.EstaVivo()){
+                Jugador2=listaPersonajeDuelo[new Random().Next(0,listaPersonajeDuelo.Count()-1)];
+                Duelo();
+                listaPersonajeDuelo.Remove(Jugador2);
+            }
+            
+        }
 
         private void TurnoJugador(Personaje atacante, Personaje defensor)
         {
@@ -146,6 +171,8 @@ namespace EspacioJuego
         {
             return ListaDeEventos[new Random().Next(0, ListaDeEventos.Count() - 1)];
         }
+
+
         public void Duelo()
         {
             int turno = RetornarTurno();
@@ -170,6 +197,7 @@ namespace EspacioJuego
                 }
             }
             //mostrar Ganador-------------------
+            FinDelDuelo();
 
 
         }
@@ -179,3 +207,5 @@ namespace EspacioJuego
     }
 
 }
+
+//Camnbiar el 0 que sale del programa

@@ -19,8 +19,12 @@ namespace EspacioPersonajes
             Edad = edad;
             Salud = salud;
             Fuerza = fuerza;
+
         }
 
+       public void RegenerarVida(){
+        Salud=100;
+        }
         public void Defender(int danio)
         {
             Salud-=danio;
