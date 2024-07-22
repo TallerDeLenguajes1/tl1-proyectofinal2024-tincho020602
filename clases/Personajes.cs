@@ -41,6 +41,14 @@ namespace EspacioPersonajes
         Salud+=masSalud;
     }
 
+    public bool EstaVivo(){
+        if(Salud>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 
     }
 }

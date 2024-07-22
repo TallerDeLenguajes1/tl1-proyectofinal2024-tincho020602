@@ -1,7 +1,7 @@
 ﻿using EspacioJuego;
 
 Juego miJuego = new Juego();
-
+miJuego.Duelo1vs1();
 
 /*
 int opcion = 0;
