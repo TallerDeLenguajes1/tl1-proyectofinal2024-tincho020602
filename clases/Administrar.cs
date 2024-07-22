@@ -62,16 +62,16 @@ namespace EspacioJuego
 
 
         private void TurnoJugador(Personaje atacante,Personaje defensor){
-
+            Evento eventoRandom = GenerarEvento();
+            int danio=atacante.Atacar(eventoRandom);
+            defensor.Defender(danio);
         }
 
         private Evento GenerarEvento(){
             return ListaDeEventos[new Random().Next(0,ListaDeEventos.Count()-1)];
         }
-        public void Duelo1vs1()
+        public void Duelo()
         {
-            Jugador1=ListaDePersonajes[1];
-            Jugador2=ListaDePersonajes[0];
             int turno = RetornarTurno();
             while (Jugador1.EstaVivo() && Jugador2.EstaVivo())
             {
@@ -80,14 +80,14 @@ namespace EspacioJuego
                     case 1:
                         //Ataca jugador1
                         Console.WriteLine("Ataca jugador 1");
+                        TurnoJugador(Jugador1,Jugador2);
                         turno = 2;
-                        Jugador2.Defender(50);
                         break;
                     case 2:
                         //Ataca jugador2
                         Console.WriteLine("Ataca jugador 2");
+                        TurnoJugador(Jugador2,Jugador1);
                         turno = 1;
-                        Jugador1.Defender(50);
                         break;
                     default:
                         break;
