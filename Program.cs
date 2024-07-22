@@ -1,8 +1,10 @@
 ﻿using EspacioJuego;
 
 Juego miJuego = new Juego();
-int opcion = 0;
 
+
+/*
+int opcion = 0;
 do
 {
 
@@ -39,4 +41,4 @@ switch (opcion)
 
     default:
         break;
-}
+}*/
