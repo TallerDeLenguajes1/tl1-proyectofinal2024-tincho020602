@@ -43,6 +43,25 @@ namespace EspacioJuego
         {
             return new Random().Next(1, 3);
         }
+
+
+         private List<Evento> CargarEventos()
+        {
+            //Leo el archivo y lo guardo como texto
+            string eventos = File.ReadAllText("./json/eventos.json");
+            //trasnformo el texto a una lista objeto
+            List<Evento> listiDeEvento = JsonSerializer.Deserialize<List<Evento>>(eventos);
+            return listiDeEvento;
+        }
+
+
+        private void TurnoJugador(Personaje atacante,Personaje defensor){
+
+        }
+
+        private Evento GenerarEvento(){
+
+        }
         public void Duelo1vs1()
         {
             Jugador1=ListaDePersonajes[1];
@@ -68,11 +87,9 @@ namespace EspacioJuego
                         break;
                 }
             }
-            if(Jugador1.EstaVivo()){
-                Console.WriteLine("Gano Jugador 1");
-            }else{
-                Console.WriteLine("Gano Jugador 2");
-            }
+            //mostrar Ganador-------------------
+
+
         }
 
 

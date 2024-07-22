@@ -1,0 +1,53 @@
+[
+    {
+      "Nombre": "Ataque de Aliens",
+      "Descripcion": "Los extraterrestres Kang y Kodos atacan con su rayo destructor.",
+      "Efecto": -15
+    },
+    {
+      "Nombre": "Sr. Burns Suelta a los Perros",
+      "Descripcion": "El Sr. Burns ha soltado a los perros para atacar al oponente.",
+      "Efecto": -20
+    },
+    {
+      "Nombre": "Ayuda de Maggie",
+      "Descripcion": "Maggie aparece y brinda una cura inesperada.",
+      "Efecto": 10
+    },
+    {
+      "Nombre": "Donut Gigante",
+      "Descripcion": "Homer encuentra un donut gigante y se lo come, recuperando energía.",
+      "Efecto": 15
+    },
+    {
+      "Nombre": "Paseo en Patineta",
+      "Descripcion": "Bart hace una maniobra impresionante con su patineta, aumentando su moral.",
+      "Efecto": 5
+    },
+    {
+      "Nombre": "Consejo Sabio de Lisa",
+      "Descripcion": "Lisa ofrece un consejo que mejora la estrategia de combate.",
+      "Efecto": 10
+    },
+    {
+      "Nombre": "Accidente con el Saxofón",
+      "Descripcion": "Lisa tropieza y su saxofón golpea al oponente accidentalmente.",
+      "Efecto": -5
+    },
+    {
+      "Nombre": "Advertencia Materna",
+      "Descripcion": "Marge da una advertencia que mejora la defensa temporalmente.",
+      "Efecto": 10
+    },
+    {
+      "Nombre": "Robo en la Tienda de Apu",
+      "Descripcion": "Un robo en la tienda de Apu deja al oponente sin recursos momentáneamente.",
+      "Efecto": -10
+    },
+    {
+      "Nombre": "Intervención de Ned Flanders",
+      "Descripcion": "Ned Flanders aparece y ofrece una oración que mejora la salud.",
+      "Efecto": 15
+    }
+  ]
+  
