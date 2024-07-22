@@ -15,12 +15,16 @@ namespace EspacioJuego
 
         private int Turno { get; set; }
 
+        private List<Evento> ListaDeEventos { get; set;}
+
 
         //Constructor
         public Juego()
         {
             ListaDePersonajes = CargarPersonajes();
+            ListaDeEventos = CargarEventos();
         }
+
         //Metodos
         public void MostrarMenu(string[] opciones)
         {
@@ -45,7 +49,9 @@ namespace EspacioJuego
         }
 
 
+
          private List<Evento> CargarEventos()
+
         {
             //Leo el archivo y lo guardo como texto
             string eventos = File.ReadAllText("./json/eventos.json");
@@ -60,7 +66,7 @@ namespace EspacioJuego
         }
 
         private Evento GenerarEvento(){
-
+            return ListaDeEventos[new Random().Next(0,ListaDeEventos.Count()-1)];
         }
         public void Duelo1vs1()
         {
