@@ -15,7 +15,7 @@ namespace EspacioJuego
 
         private int Turno { get; set; }
 
-        private List<Evento> ListaDeEventos { get; set;}
+        private List<Evento> ListaDeEventos { get; set; }
 
 
         //Constructor
@@ -50,7 +50,7 @@ namespace EspacioJuego
 
 
 
-         private List<Evento> CargarEventos()
+        private List<Evento> CargarEventos()
 
         {
             //Leo el archivo y lo guardo como texto
@@ -61,14 +61,62 @@ namespace EspacioJuego
         }
 
 
-        private void TurnoJugador(Personaje atacante,Personaje defensor){
+        //Esto debo separar en otro en otro metodo p/ahorrar espacio
+        private void ElegirPersonaje(int cantidadJugadores)
+        {
+
+            int opcion = 0;
+            string opcionIngresada;
+            do
+            {
+                Console.WriteLine("Elegir personaje para el jugador 1: ");
+                int indice = 0;
+                foreach (var personaje in ListaDePersonajes)
+                {
+                    Console.WriteLine($"{indice}) - {personaje.Nombre}");
+                    indice++;
+                }
+                Console.WriteLine("Opcion: ");
+                opcionIngresada = Console.ReadLine();
+            } while (!(int.TryParse(opcionIngresada, out opcion)) && !(opcion >= 0 && opcion <= 9));
+            Jugador1 = ListaDePersonajes[opcion];
+
+            if (cantidadJugadores == 2)
+            {
+                do
+                {
+                    Console.WriteLine("Elegir personaje para el jugador 2: ");
+                    int indice = 0;
+                    foreach (var personaje in ListaDePersonajes)
+                    {
+                        Console.WriteLine($"{indice}) - {personaje.Nombre}");
+                        indice++;
+                    }
+                    Console.WriteLine("Opcion: ");
+                    opcionIngresada = Console.ReadLine();
+                } while (!(int.TryParse(opcionIngresada, out opcion)) && !(opcion >= 0 && opcion <= 9));
+                  Jugador2 = ListaDePersonajes[opcion];
+            }
+
+
+        }
+
+        public void Partida1vs1(){
+            ElegirPersonaje(2);
+            Duelo();
+        }
+
+
+        private void TurnoJugador(Personaje atacante, Personaje defensor)
+        {
             Evento eventoRandom = GenerarEvento();
-            int danio=atacante.Atacar(eventoRandom);
+            int danio = atacante.Atacar(eventoRandom);
             defensor.Defender(danio);
         }
 
-        private Evento GenerarEvento(){
-            return ListaDeEventos[new Random().Next(0,ListaDeEventos.Count()-1)];
+        private Evento GenerarEvento()
+        {
+            return ListaDeEventos[new Random().Next(0, ListaDeEventos.Count() - 1)];
         }
         public void Duelo()
         {
@@ -80,13 +128,13 @@ namespace EspacioJuego
                     case 1:
                         //Ataca jugador1
                         Console.WriteLine("Ataca jugador 1");
-                        TurnoJugador(Jugador1,Jugador2);
+                        TurnoJugador(Jugador1, Jugador2);
                         turno = 2;
                         break;
                     case 2:
                         //Ataca jugador2
                         Console.WriteLine("Ataca jugador 2");
-                        TurnoJugador(Jugador2,Jugador1);
+                        TurnoJugador(Jugador2, Jugador1);
                         turno = 1;
                         break;
                     default:
