@@ -1,6 +1,6 @@
 [
   {
-    "Nombre": "Homer Simpson",
+    "Nombre": "Homero Simpson",
     "Apodo": "Homero",
     "Edad": 39,
     "Salud": 100,
@@ -21,7 +21,7 @@
     "Fuerza": 4
   },
   {
-    "Nombre": "Marge Simpson",
+    "Nombre": "Marge Bubbie",
     "Apodo": "Marj",
     "Edad": 36,
     "Salud": 95,
@@ -49,7 +49,7 @@
     "Fuerza": 7
   },
   {
-    "Nombre": "Krusty the Clown",
+    "Nombre": "Krusty el payaso",
     "Apodo": "Krusty",
     "Edad": 55,
     "Salud": 75,
@@ -63,9 +63,9 @@
     "Fuerza": 6
   },
   {
-    "Nombre": "Chief Wiggum",
-    "Apodo": "Wiggum",
-    "Edad": 42,
+    "Nombre": "Milhouse Van Houten",
+    "Apodo": "Milhouse",
+    "Edad": 11,
     "Salud": 70,
     "Fuerza": 5
   }

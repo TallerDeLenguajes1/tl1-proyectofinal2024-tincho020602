@@ -116,8 +116,8 @@ namespace EspacioJuego
             string opcionIngresada;
             do{ 
             do{
-                Console.Clear();
-                MostrarMenu([" 1)1vs1","2)1vsCpu","3)historial","0)Salir"]);
+                //Console.Clear();
+                MostrarMenu(["1)- 1vs1","2)- 1vsCpu","3)- historial","4)- Salir"]);
                  Console.WriteLine("Opcion: ");
                  opcionIngresada = Console.ReadLine();
              } while (!(int.TryParse(opcionIngresada, out opcion)) && !(opcion >= 1 && opcion <= 4));
@@ -163,6 +163,7 @@ namespace EspacioJuego
         private void TurnoJugador(Personaje atacante, Personaje defensor)
         {
             Evento eventoRandom = GenerarEvento();
+            Console.WriteLine($"{eventoRandom.Descripcion}");
             int danio = atacante.Atacar(eventoRandom);
             defensor.Defender(danio);
         }
@@ -176,6 +177,7 @@ namespace EspacioJuego
         public void Duelo()
         {
             int turno = RetornarTurno();
+            Console.WriteLine($"Comienza el Jugador {turno}");
             while (Jugador1.EstaVivo() && Jugador2.EstaVivo())
             {
                 switch (turno)
@@ -190,6 +192,9 @@ namespace EspacioJuego
                         //Ataca jugador2
                         Console.WriteLine("Ataca jugador 2");
                         TurnoJugador(Jugador2, Jugador1);
+                        Console.WriteLine("\n---------------------------------------");
+                        Console.WriteLine("Presiona cualquier tecla para continuar...");
+                        Console.ReadKey(); // Espera a que el usuario presione cualquier tecla.
                         turno = 1;
                         break;
                     default:
