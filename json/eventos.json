@@ -2,91 +2,91 @@
   {
     "Nombre": "Ataque de Aliens",
     "Descripcion": "Los extraterrestres Kang y Kodos atacan con su rayo destructor.",
-    "Efecto": -15
+    "Efecto": -25
   },
   {
     "Nombre": "Sr. Burns Suelta a los Perros",
     "Descripcion": "El Sr. Burns ha soltado a los perros para atacar al oponente.",
-    "Efecto": -20
+    "Efecto": -30
   },
   {
     "Nombre": "Ayuda de Maggie",
     "Descripcion": "Maggie aparece y brinda una cura inesperada.",
-    "Efecto": 10
+    "Efecto": 20
   },
   {
     "Nombre": "Robo en la Tienda de Apu",
     "Descripcion": "Un robo en la tienda de Apu deja al oponente sin recursos momentáneamente.",
-    "Efecto": -10
+    "Efecto": -20
   },
   {
     "Nombre": "Intervención de Ned Flanders",
     "Descripcion": "Ned Flanders aparece y ofrece una oración que mejora la salud.",
-    "Efecto": 15
+    "Efecto": 25
   },
   {
     "Nombre": "Llamada de Patty y Selma",
     "Descripcion": "Una llamada inoportuna de Patty y Selma distrae al oponente.",
-    "Efecto": -10
+    "Efecto": -20
   },
   {
     "Nombre": "Saxofón Relajante",
     "Descripcion": "El sonido del saxofón relaja al personaje, restaurando salud.",
-    "Efecto": 10
+    "Efecto": 20
   },
   {
     "Nombre": "Ayuda de Milhouse",
     "Descripcion": "Milhouse ofrece su ayuda, aumentando la moral del personaje.",
-    "Efecto": 5
+    "Efecto": 10
   },
   {
     "Nombre": "Perro Rabioso",
     "Descripcion": "El ayudante de santa tiene rabia aparece y ataca al oponente.",
-    "Efecto": -15
+    "Efecto": -25
   },
   {
     "Nombre": "Interferencia de Tom y Daly",
     "Descripcion": "Tom y Daly causan caos en el campo de batalla.",
-    "Efecto": -10
+    "Efecto": -20
   },
   {
     "Nombre": "Visita de Abraham Simpson",
     "Descripcion": "Abraham Simpson aparece y ofrece sabiduría, mejorando la estrategia.",
-    "Efecto": 10
+    "Efecto": 20
   },
   {
     "Nombre": "Accidente en el Monorraíl",
     "Descripcion": "Un accidente en el monorraíl causa daños colaterales.",
-    "Efecto": -15
+    "Efecto": -25
   },
   {
     "Nombre": "Cura Milagrosa",
     "Descripcion": "Una cura milagrosa aparece y restaura la salud del personaje.",
-    "Efecto": 20
+    "Efecto": 30
   },
   {
     "Nombre": "Donut Energético",
     "Descripcion": "Un donut gigante aparece y restaura la energía del personaje.",
-    "Efecto": 15
+    "Efecto": 25
   },
   {
     "Nombre": "Consejo Sabio",
     "Descripcion": "Un consejo sabio mejora la estrategia de combate.",
-    "Efecto": 10
+    "Efecto": 20
   },
   {
     "Nombre": "Accidente con el Saxofón",
     "Descripcion": "Un accidente con el saxofón golpea al oponente accidentalmente.",
-    "Efecto": -5
+    "Efecto": -10
   },
   {
     "Nombre": "Advertencia Materna",
     "Descripcion": "Una advertencia mejora la defensa temporalmente.",
-    "Efecto": 10
+    "Efecto": 20
   },
   {
     "Nombre": "Explosión de la Planta Nuclear",
     "Descripcion": "Una explosión en la planta nuclear causa daño masivo.",
-    "Efecto": -20
+    "Efecto": -40
   }
 ]

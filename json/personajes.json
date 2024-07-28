@@ -4,69 +4,69 @@
     "Apodo": "Homero",
     "Edad": 39,
     "Salud": 100,
-    "Fuerza": 8
+    "Fuerza": 40
   },
   {
     "Nombre": "Bart Simpson",
     "Apodo": "El Barto",
     "Edad": 10,
-    "Salud": 90,
-    "Fuerza": 6
+    "Salud": 100,
+    "Fuerza": 20
   },
   {
     "Nombre": "Lisa Simpson",
     "Apodo": "Sabionda",
     "Edad": 8,
-    "Salud": 85,
-    "Fuerza": 4
+    "Salud": 100,
+    "Fuerza": 10
   },
   {
     "Nombre": "Marge Bubbie",
     "Apodo": "Marj",
     "Edad": 36,
-    "Salud": 95,
-    "Fuerza": 5
+    "Salud": 100,
+    "Fuerza": 15
   },
   {
     "Nombre": "Maggie Simpson",
     "Apodo": "Mags",
     "Edad": 1,
-    "Salud": 50,
-    "Fuerza": 2
+    "Salud": 100,
+    "Fuerza": 5
   },
   {
     "Nombre": "Mr. Burns",
     "Apodo": "Monty",
     "Edad": 104,
-    "Salud": 60,
-    "Fuerza": 3
+    "Salud": 100,
+    "Fuerza": 5
   },
   {
     "Nombre": "Ned Flanders",
     "Apodo": "Neddy",
     "Edad": 60,
-    "Salud": 80,
-    "Fuerza": 7
+    "Salud": 100,
+    "Fuerza": 35
   },
   {
     "Nombre": "Krusty el payaso",
     "Apodo": "Krusty",
     "Edad": 55,
-    "Salud": 75,
-    "Fuerza": 6
+    "Salud": 100,
+    "Fuerza": 40
   },
   {
     "Nombre": "Apu Nahasapeemapetilon",
     "Apodo": "Apu",
     "Edad": 45,
-    "Salud": 85,
-    "Fuerza": 6
+    "Salud": 100,
+    "Fuerza": 30
   },
   {
     "Nombre": "Milhouse Van Houten",
     "Apodo": "Milhouse",
     "Edad": 11,
-    "Salud": 70,
-    "Fuerza": 5
+    "Salud": 100,
+    "Fuerza": 10
   }
 ]

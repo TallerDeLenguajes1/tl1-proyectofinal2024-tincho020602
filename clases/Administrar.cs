@@ -33,6 +33,8 @@ namespace EspacioJuego
                 Console.WriteLine(opcion);
             }
         }
+
+
         private List<Personaje> CargarPersonajes()
         {
             //Leo el archivo y lo guardo como texto
@@ -61,47 +63,43 @@ namespace EspacioJuego
         }
 
 
-        //Esto debo separar en otro en otro metodo p/ahorrar espacio
-        private void ElegirPersonaje(int cantidadJugadores)
+    private void ElegirPersonaje(int cantidadJugadores)
+    {
+    Jugador1 = SeleccionarPersonaje(1);
+    if (cantidadJugadores == 2)
+    {
+        Jugador2 = SeleccionarPersonaje(2);
+    }
+    }
+
+    private Personaje SeleccionarPersonaje(int numeroJugador)
+    {
+    int opcion = 0;
+    string opcionIngresada;
+    do
+    {
+        Console.WriteLine($"Elegir personaje para el jugador {numeroJugador}: ");
+        int indice = 0;
+        foreach (var personaje in ListaDePersonajes)
         {
-
-            int opcion = 0;
-            string opcionIngresada;
-            do
-            {
-                Console.WriteLine("Elegir personaje para el jugador 1: ");
-                int indice = 0;
-                foreach (var personaje in ListaDePersonajes)
-                {
-                    Console.WriteLine($"{indice}) - {personaje.Nombre}");
-                    indice++;
-                }
-                Console.WriteLine("Opcion: ");
-                opcionIngresada = Console.ReadLine();
-            } while (!(int.TryParse(opcionIngresada, out opcion)) && !(opcion >= 0 && opcion <= 9));
-            Jugador1 = ListaDePersonajes[opcion];
-
-            if (cantidadJugadores == 2)
-            {
-                do
-                {
-                    Console.WriteLine("Elegir personaje para el jugador 2: ");
-                    int indice = 0;
-                    foreach (var personaje in ListaDePersonajes)
-                    {
-                        Console.WriteLine($"{indice}) - {personaje.Nombre}");
-                        indice++;
-                    }
-                    Console.WriteLine("Opcion: ");
-                    opcionIngresada = Console.ReadLine();
-                } while (!(int.TryParse(opcionIngresada, out opcion)) && !(opcion >= 0 && opcion <= 9));
-                  Jugador2 = ListaDePersonajes[opcion];
-            }
-
-
+            Console.WriteLine($"{indice}) - {personaje.Nombre}");
+            Console.WriteLine($"     Apodo: {personaje.Apodo}");
+            Console.WriteLine($"     Edad: {personaje.Edad}");
+            Console.WriteLine($"     Salud: {personaje.Salud}");
+            Console.WriteLine($"     Fuerza: {personaje.Fuerza}");
+            Console.WriteLine("------------------------------\n");
+            indice++;
         }
+        Console.WriteLine("Opcion: ");
+        opcionIngresada = Console.ReadLine();
+    } while (!(int.TryParse(opcionIngresada, out opcion)) && !(opcion >= 0 && opcion < ListaDePersonajes.Count));
+    
+    return ListaDePersonajes[opcion];
+    }
 
-        public void FinDelDuelo(){
+
+    public void FinDelDuelo()
+    {
             if(Jugador1.EstaVivo()){
                 Console.WriteLine("Gano Jugador1");
                 Jugador1.RegenerarVida();
@@ -109,7 +107,7 @@ namespace EspacioJuego
                 Console.WriteLine("Gano Jugador2");
                 Jugador2.RegenerarVida();
             }
-        }
+    }
 
         public void IniciarJuego(){
             int opcion=0;
@@ -145,9 +143,6 @@ namespace EspacioJuego
             Duelo();
         }
 
-      //  private void GenerarJugadorRandom(){
-      //      Jugador2=
-      //  }
 
         private void Partida1vsCPU(){
             ElegirPersonaje(1);
