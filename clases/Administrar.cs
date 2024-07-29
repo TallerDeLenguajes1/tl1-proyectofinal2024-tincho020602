@@ -66,9 +66,13 @@ namespace EspacioJuego
     private void ElegirPersonaje(int cantidadJugadores)
     {
     Jugador1 = SeleccionarPersonaje(1);
+    Console.WriteLine($"Usted selecciono el personaje: {Jugador1.Apodo}");
+    Console.WriteLine("-------------------------------------");
     if (cantidadJugadores == 2)
     {
         Jugador2 = SeleccionarPersonaje(2);
+        Console.WriteLine($"Usted selecciono el personaje: {Jugador2.Apodo}");
+        Console.WriteLine("-------------------------------------");
     }
     }
 
@@ -82,12 +86,9 @@ namespace EspacioJuego
         int indice = 0;
         foreach (var personaje in ListaDePersonajes)
         {
-            Console.WriteLine($"{indice}) - {personaje.Nombre}");
-            Console.WriteLine($"     Apodo: {personaje.Apodo}");
-            Console.WriteLine($"     Edad: {personaje.Edad}");
-            Console.WriteLine($"     Salud: {personaje.Salud}");
-            Console.WriteLine($"     Fuerza: {personaje.Fuerza}");
-            Console.WriteLine("------------------------------\n");
+            Console.WriteLine($"{indice}) - {personaje.Nombre} - Apodo: {personaje.Apodo} - Edad: {personaje.Edad}");
+            Console.WriteLine($"     Salud: {personaje.Salud} - Fuerza: {personaje.Fuerza}");
+            Console.WriteLine("------------------------------");
             indice++;
         }
         Console.WriteLine("Opcion: ");
@@ -168,34 +169,101 @@ namespace EspacioJuego
             return ListaDeEventos[new Random().Next(0, ListaDeEventos.Count() - 1)];
         }
 
+        private void BebidaEnergetica(Personaje Jugador){
+            Jugador.RegenerarVida();
+        }
 
-        public void Duelo()
+public void Duelo()
+{
+    int turno = RetornarTurno();
+    int cantBebida = 1;
+    int opcion=0;
+    string opcionIngresada;
+    Console.WriteLine($"Comienza el Jugador {turno}");
+    Console.ReadKey(); // Espera a que el usuario presione cualquier tecla.
+    Console.WriteLine("Presiona cualquier tecla para continuar...");
+
+    while (Jugador1.EstaVivo() && Jugador2.EstaVivo())
+    {
+        switch (turno)
         {
-            int turno = RetornarTurno();
-            Console.WriteLine($"Comienza el Jugador {turno}");
-            while (Jugador1.EstaVivo() && Jugador2.EstaVivo())
-            {
-                switch (turno)
+            case 1:
+                // Turno del Jugador 1
+                Console.WriteLine("\n---------------------------------------");
+                    Console.WriteLine($"\nSalud de {Jugador1.Nombre} es: {Jugador1.Salud}");
+                    Console.WriteLine($"\nSalud de {Jugador2.Nombre} es: {Jugador2.Salud}");
+                Console.WriteLine($"\nAtaca {Jugador1.Nombre}");
+
+                if (cantBebida > 0)
                 {
-                    case 1:
-                        //Ataca jugador1
-                        Console.WriteLine("Ataca jugador 1");
-                        TurnoJugador(Jugador1, Jugador2);
-                        turno = 2;
-                        break;
-                    case 2:
-                        //Ataca jugador2
-                        Console.WriteLine("Ataca jugador 2");
-                        TurnoJugador(Jugador2, Jugador1);
-                        Console.WriteLine("\n---------------------------------------");
-                        Console.WriteLine("Presiona cualquier tecla para continuar...");
-                        Console.ReadKey(); // Espera a que el usuario presione cualquier tecla.
-                        turno = 1;
-                        break;
-                    default:
-                        break;
+                    do
+                    {
+                        Console.WriteLine("Desea Atacar (1) o tomar una bebida energetica para recuperar su salud (2)?");
+                        Console.WriteLine("Opcion: ");
+                        opcionIngresada = Console.ReadLine();
+                    } while (!int.TryParse(opcionIngresada, out opcion) || (opcion != 1 && opcion != 2));
+
+                    if (opcion == 2 && cantBebida > 0)
+                    {
+                        Console.WriteLine($"\nBebida Energetica Disponible: {cantBebida}");
+                        BebidaEnergetica(Jugador1);
+                        cantBebida--;
+                        Console.WriteLine($"\nSalud de {Jugador1.Nombre} es: {Jugador1.Salud}");
+                    }
                 }
-            }
+                
+                
+                if (opcion == 1 || cantBebida <= 0)
+                {
+                    Console.WriteLine($"\nAtaca {Jugador1.Nombre}");
+                    Console.WriteLine($"\nDefiende {Jugador2.Nombre}");
+                    TurnoJugador(Jugador1, Jugador2);
+                }
+                
+                turno = 2;
+                Console.ReadKey(); // Espera a que el usuario presione cualquier tecla.
+                Console.WriteLine("Presiona cualquier tecla para continuar...");
+                break;
+            case 2:
+                // Turno del Jugador 2
+              Console.WriteLine("\n---------------------------------------");
+                    Console.WriteLine($"\nSalud de {Jugador2.Nombre} es: {Jugador2.Salud}");
+                    Console.WriteLine($"\nSalud de {Jugador1.Nombre} es: {Jugador1.Salud}");
+                Console.WriteLine($"\nAtaca {Jugador2.Nombre}");
+
+                if (cantBebida > 0)
+                {
+                    do
+                    {
+                        Console.WriteLine("Desea Atacar (1) o tomar una bebida energetica para recuperar su salud (2)?");
+                        Console.WriteLine("Opcion: ");
+                        opcionIngresada = Console.ReadLine();
+                    } while (!int.TryParse(opcionIngresada, out opcion) || (opcion != 1 && opcion != 2));
+
+                    if (opcion == 2 && cantBebida > 0)
+                    {
+                        Console.WriteLine($"\nBebida Energetica Disponible: {cantBebida}");
+                        BebidaEnergetica(Jugador2);
+                        cantBebida--;
+                        Console.WriteLine($"\nSalud de {Jugador2.Nombre} es: {Jugador2.Salud}");
+                    }
+                }
+                
+                if (opcion == 1 || cantBebida <= 0)
+                {
+                    Console.WriteLine($"\nAtaca {Jugador2.Nombre}");
+                    Console.WriteLine($"\nDefiende {Jugador1.Nombre}");
+                    TurnoJugador(Jugador2, Jugador1);
+                }
+                
+                Console.ReadKey(); // Espera a que el usuario presione cualquier tecla.
+                Console.WriteLine("Presiona cualquier tecla para continuar...");
+                turno = 1;
+                break;
+            default:
+                break;
+        }
+    
             //mostrar Ganador-------------------
             FinDelDuelo();
 
@@ -206,6 +274,6 @@ namespace EspacioJuego
 
     }
 
+    }
 }
-
 //Camnbiar el 0 que sale del programa

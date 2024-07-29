@@ -1,0 +1,38 @@
+[ 
+    {
+    "Nombre": "Mr. Burns",
+    "Apodo": "Monty",
+    "Edad": 104,
+    "Salud": 100,
+    "Fuerza": 5
+  },
+  {
+    "Nombre": "Ned Flanders",
+    "Apodo": "Neddy",
+    "Edad": 60,
+    "Salud": 100,
+    "Fuerza": 35
+  },
+  {
+    "Nombre": "Krusty el payaso",
+    "Apodo": "Krusty",
+    "Edad": 55,
+    "Salud": 100,
+    "Fuerza": 40
+  },
+  {
+    "Nombre": "Apu Nahasapeemapetilon",
+    "Apodo": "Apu",
+    "Edad": 45,
+    "Salud": 100,
+    "Fuerza": 30
+  },
+  {
+    "Nombre": "Milhouse Van Houten",
+    "Apodo": "Milhouse",
+    "Edad": 11,
+    "Salud": 100,
+    "Fuerza": 10
+  }
+  ]
+
