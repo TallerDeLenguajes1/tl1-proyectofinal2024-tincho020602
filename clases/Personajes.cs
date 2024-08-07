@@ -10,21 +10,31 @@ namespace EspacioPersonajes
         public int Edad { get; set; }
         public int Salud { get; set; }
         public int Fuerza { get; set; }
+        //public bool EsCPU { get; set; }
+        //public int CantBebidas { get; set; }
 
         // Constructor
-        public Personaje(string nombre, string apodo, int edad, int salud, int fuerza)
+        public Personaje(){
+
+        }
+
+        public Personaje(string nombre, string apodo, int edad, int salud,int fuerza)
         {
             Nombre = nombre;
             Apodo = apodo;
             Edad = edad;
             Salud = salud;
             Fuerza = fuerza;
-
+            //EsCPU = cpu;
+            //CantBebidas= 1;
         }
 
-       public void RegenerarVida(){
-        Salud=100;
-        }
+
+       /*public void TomarBebida(){
+        Salud+=30;
+        CantBebidas--;
+        }*/
+        
         public void Defender(int danio)
         {
             Salud-=danio;

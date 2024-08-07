@@ -28,6 +28,7 @@ namespace EspacioJuego
         //Metodos
         public void MostrarMenu(string[] opciones)
         {
+            Console.Clear();
             foreach (var opcion in opciones)
             {
                 Console.WriteLine(opcion);
@@ -69,30 +70,30 @@ namespace EspacioJuego
     }
 
 
-   private void ElegirPersonaje(int cantidadJugadores)
+/*   private void ElegirPersonaje()
 {
-    Jugador1 = SeleccionarPersonaje(1, null);
+    Jugador1 = SeleccionarPersonaje();
     Console.WriteLine($"Usted selecciono el personaje: {Jugador1.Apodo}");
     Console.WriteLine("-------------------------------------");
     EsperarTecla();
 
     if (cantidadJugadores == 2)
     {
-        Jugador2 = SeleccionarPersonaje(2, Jugador1);
+        Jugador2 = SeleccionarPersonaje();
         Console.WriteLine($"Usted selecciono el personaje: {Jugador2.Apodo}");
         Console.WriteLine("-------------------------------------");
         EsperarTecla();
     }
-}
+}*/
 
-private Personaje SeleccionarPersonaje(int numeroJugador, Personaje personajeNoPermitido)
+private Personaje SeleccionarPersonaje()
 {
     int opcion = 0;
     string opcionIngresada;
     bool opcionValida;
+    Personaje elegido=new Personaje();
     do
     {
-        Console.WriteLine($"Elegir personaje para el jugador {numeroJugador}: ");
         int indice = 0;
         foreach (var personaje in ListaDePersonajes)
         {
@@ -106,27 +107,36 @@ private Personaje SeleccionarPersonaje(int numeroJugador, Personaje personajeNoP
 
         opcionValida = int.TryParse(opcionIngresada, out opcion) && (opcion >= 0 && opcion < ListaDePersonajes.Count);
 
-        if (opcionValida && personajeNoPermitido != null && ListaDePersonajes[opcion] == personajeNoPermitido)
+        if (opcionValida)
         {
-            Console.WriteLine("El personaje ya fue seleccionado por el Jugador 1. Elija otro personaje.");
-            opcionValida = false;
+          elegido = ListaDePersonajes[opcion];
+          ListaDePersonajes.Remove(elegido);
+
         }
     } while (!opcionValida);
-
-    return ListaDePersonajes[opcion];
+    Console.Clear();
+    return elegido;
 }
 
-
+  /*  public void IniciarPartida(){
+        int cantJugadores=2;
+        if (cantidadJugadores==1)
+        {
+            
+        }
+    }*/
 
     public void FinDelDuelo()
     {
+            Console.Clear();
             if(Jugador1.EstaVivo()){
                 Console.WriteLine("Gano Jugador1");
-                Jugador1.RegenerarVida();
+                //Jugador1.RegenerarVida();
             }else{
                 Console.WriteLine("Gano Jugador2");
-                Jugador2.RegenerarVida();
+                //Jugador2.RegenerarVida();
             }
+            Console.ReadKey();
     }
 
         public void IniciarJuego(){
@@ -134,23 +144,23 @@ private Personaje SeleccionarPersonaje(int numeroJugador, Personaje personajeNoP
             string opcionIngresada;
             do{ 
             do{
-                //Console.Clear();
-                MostrarMenu(["1)- 1vsCpu","2)- 1vs1","3)- historial","4)- Salir"]);
+                MostrarMenu(["1- 1vsCpu","2- 1vs1","3- historial","4- Salir"]);
                  Console.WriteLine("Opcion: ");
                  opcionIngresada = Console.ReadLine();
              } while (!(int.TryParse(opcionIngresada, out opcion)) && !(opcion >= 1 && opcion <= 4));
              switch(opcion){
                 case 1:
-                   Partida1vsCPU(opcion);
+                   //Partida1vsCPU(opcion);
                 break;
                 case 2:
-                   Partida1vs1(opcion);
+                   Partida1vs1();
                  break;
                  case 3:
-                 Console.WriteLine("Opcion 3 ");
+                 Console.WriteLine("Mostrar Ranking...");
                  break;
                  case 4:
-                 Console.WriteLine("Opcion 4 ");
+                 Console.WriteLine("Salir...");
+                 Environment.Exit(0);
                  break;
                  default:
                  break;
@@ -158,13 +168,16 @@ private Personaje SeleccionarPersonaje(int numeroJugador, Personaje personajeNoP
             }while(opcion!=4);
         }
 
-        private void Partida1vs1(int cantJugadores){
-            ElegirPersonaje(2);
-            Duelo(cantJugadores);
+        private void Partida1vs1(){
+            Console.WriteLine($"Elegir personaje para el Jugador1: ");
+            Jugador1=SeleccionarPersonaje();
+            Console.WriteLine($"Elegir personaje para el Jugador2: ");
+            Jugador2=SeleccionarPersonaje();
+            Duelo();
         }
 
 
-        private void Partida1vsCPU(int cantJugadores){
+      /*  private void Partida1vsCPU(int cantJugadores){
             ElegirPersonaje(1);
             List<Personaje> listaPersonajeDuelo=ListaDePersonajes;
             while(listaPersonajeDuelo.Count()>0 && Jugador1.EstaVivo()){
@@ -173,12 +186,12 @@ private Personaje SeleccionarPersonaje(int numeroJugador, Personaje personajeNoP
                 listaPersonajeDuelo.Remove(Jugador2);
             }
             
-        }
+        }*/
 
         private void TurnoJugador(Personaje atacante, Personaje defensor)
         {
             Evento eventoRandom = GenerarEvento();
-            Console.WriteLine($"{eventoRandom.Descripcion}");
+            Console.WriteLine($"Ocurrio un evento: {eventoRandom.Nombre}");
             int danio = atacante.Atacar(eventoRandom);
             defensor.Defender(danio);
         }
@@ -188,54 +201,57 @@ private Personaje SeleccionarPersonaje(int numeroJugador, Personaje personajeNoP
             return ListaDeEventos[new Random().Next(0, ListaDeEventos.Count() - 1)];
         }
 
-        private void BebidaEnergetica(Personaje Jugador){
-            Jugador.RegenerarVida();
-        }
+     //   private void BebidaEnergetica(Personaje Jugador){
+     //       Jugador.RegenerarVida();
+     //   }
 
         private void Estadisticas (Personaje Jugador){
             Console.WriteLine($"\nSalud de {Jugador.Nombre} es: {Jugador.Salud}");
         }
 
-    public void Duelo(int cantJugadores)
+    public void Duelo()
     {
         int turno = RetornarTurno();
-        int cantBebida = 1;
-        int opcion = 0;
-        string opcionIngresada;
-    
-        Console.WriteLine($"Comienza el Jugador {turno}");
-    
+        Console.Clear();
+        Console.WriteLine($"Comienza el Jugador {turno}");   
+        Console.WriteLine("Oprima cualquier tecla para continuar...");   
+        Console.ReadKey(); 
         while (Jugador1.EstaVivo() && Jugador2.EstaVivo())
         {
+            Console.Clear();
             if (turno == 1)
             {
-                ProcesarTurno(Jugador1, Jugador2, cantBebida, turno);
+                Console.WriteLine($"Ataca {Jugador1.Nombre}");
+                TurnoJugador(Jugador1,Jugador2);
+                turno=2;
+                Console.ReadKey();
             }
             else
             {
-                ProcesarTurno(Jugador2, Jugador1, cantBebida, turno, cantJugadores);
+                Console.WriteLine($"Ataca {Jugador2.Nombre}");
+                TurnoJugador(Jugador2,Jugador1);
+                turno=1;
+                Console.ReadKey();
             }
         }
-    
         // Mostrar Ganador
         FinDelDuelo();
     }
+
     
-    private void ProcesarTurno(Personaje atacante, Personaje defensor, int cantBebida, int turno, int cantJugadores = 2)
+    
+   /* private void ProcesarTurno(Personaje atacante, Personaje defensor)
     {
         Console.WriteLine("\n---------------------------------------");
         Estadisticas(atacante);
         Estadisticas(defensor);
         Console.WriteLine($"\nAtaca {atacante.Nombre}");
     
-        if (cantJugadores == 2 || atacante == Jugador1)
-        {
+        
             RealizarAccionJugador(atacante, cantBebida);
-        }
-        else
-        {
+        
             RealizarAccionAutomatica(atacante, cantBebida);
-        }
+        
     
         Console.WriteLine($"\nAtaca {atacante.Nombre}");
         Console.WriteLine($"\nDefiende {defensor.Nombre}");
@@ -245,8 +261,8 @@ private Personaje SeleccionarPersonaje(int numeroJugador, Personaje personajeNoP
         Console.WriteLine("Presiona cualquier tecla para continuar...");
         Console.ReadKey(); // Espera a que el usuario presione cualquier tecla.
     }
-    
-    private void RealizarAccionJugador(Personaje jugador, int cantBebida)
+    */
+    /*private void RealizarAccionJugador(Personaje jugador, int cantBebida)
     {
         int opcion;
         string opcionIngresada;
@@ -283,7 +299,7 @@ private void RealizarAccionAutomatica(Personaje jugador,  int cantBebida)
         cantBebida--;
         Estadisticas(jugador);
     }
-}
+}*/
 
     }
 }
