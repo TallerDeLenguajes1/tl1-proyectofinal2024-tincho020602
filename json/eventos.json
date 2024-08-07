@@ -1,92 +1,103 @@
 [
   {
-    "Nombre": "Ataque de Aliens",
-    "Descripcion": "Los extraterrestres Kang y Kodos atacan con su rayo destructor.",
-    "Efecto": -25
-  },
-  {
-    "Nombre": "Sr. Burns Suelta a los Perros",
-    "Descripcion": "El Sr. Burns ha soltado a los perros para atacar al oponente.",
-    "Efecto": -30
-  },
-  {
-    "Nombre": "Ayuda de Maggie",
-    "Descripcion": "Maggie aparece y brinda una cura inesperada.",
-    "Efecto": 20
-  },
-  {
-    "Nombre": "Robo en la Tienda de Apu",
-    "Descripcion": "Un robo en la tienda de Apu deja al oponente sin recursos momentáneamente.",
-    "Efecto": -20
-  },
-  {
-    "Nombre": "Intervención de Ned Flanders",
-    "Descripcion": "Ned Flanders aparece y ofrece una oración que mejora la salud.",
-    "Efecto": 25
-  },
-  {
-    "Nombre": "Llamada de Patty y Selma",
-    "Descripcion": "Una llamada inoportuna de Patty y Selma distrae al oponente.",
-    "Efecto": -20
-  },
-  {
-    "Nombre": "Saxofón Relajante",
-    "Descripcion": "El sonido del saxofón relaja al personaje, restaurando salud.",
-    "Efecto": 20
-  },
-  {
-    "Nombre": "Ayuda de Milhouse",
-    "Descripcion": "Milhouse ofrece su ayuda, aumentando la moral del personaje.",
+    "Nombre": "Tormenta Eléctrica",
+    "Descripcion": "Una tormenta repentina carga de energía a los participantes, aumentando su poder de ataque.",
     "Efecto": 10
   },
   {
-    "Nombre": "Perro Rabioso",
-    "Descripcion": "El ayudante de santa tiene rabia aparece y ataca al oponente.",
-    "Efecto": -25
-  },
-  {
-    "Nombre": "Interferencia de Tom y Daly",
-    "Descripcion": "Tom y Daly causan caos en el campo de batalla.",
-    "Efecto": -20
-  },
-  {
-    "Nombre": "Visita de Abraham Simpson",
-    "Descripcion": "Abraham Simpson aparece y ofrece sabiduría, mejorando la estrategia.",
-    "Efecto": 20
-  },
-  {
-    "Nombre": "Accidente en el Monorraíl",
-    "Descripcion": "Un accidente en el monorraíl causa daños colaterales.",
-    "Efecto": -25
-  },
-  {
-    "Nombre": "Cura Milagrosa",
-    "Descripcion": "Una cura milagrosa aparece y restaura la salud del personaje.",
-    "Efecto": 30
-  },
-  {
-    "Nombre": "Donut Energético",
-    "Descripcion": "Un donut gigante aparece y restaura la energía del personaje.",
-    "Efecto": 25
-  },
-  {
-    "Nombre": "Consejo Sabio",
-    "Descripcion": "Un consejo sabio mejora la estrategia de combate.",
-    "Efecto": 20
-  },
-  {
-    "Nombre": "Accidente con el Saxofón",
-    "Descripcion": "Un accidente con el saxofón golpea al oponente accidentalmente.",
+    "Nombre": "Fallo Mecánico",
+    "Descripcion": "Un fallo inesperado en las máquinas reduce la efectividad del próximo ataque.",
     "Efecto": -10
   },
   {
-    "Nombre": "Advertencia Materna",
-    "Descripcion": "Una advertencia mejora la defensa temporalmente.",
+    "Nombre": "Inyección de Adrenalina",
+    "Descripcion": "Una dosis de adrenalina inunda el cuerpo, permitiendo un ataque más fuerte.",
+    "Efecto": 15
+  },
+  {
+    "Nombre": "Terreno Resbaladizo",
+    "Descripcion": "El terreno se vuelve resbaladizo, disminuyendo la precisión y fuerza del ataque.",
+    "Efecto": -5
+  },
+  {
+    "Nombre": "Ráfaga de Viento",
+    "Descripcion": "Una fuerte ráfaga de viento impulsa el ataque, aumentando su potencia.",
+    "Efecto": 8
+  },
+  {
+    "Nombre": "Distracción Ambiental",
+    "Descripcion": "Un ruido inesperado o una distracción reduce la concentración, afectando la fuerza del ataque.",
+    "Efecto": -8
+  },
+  {
+    "Nombre": "Oportunidad Dorada",
+    "Descripcion": "Se presenta una oportunidad perfecta para lanzar un ataque devastador.",
     "Efecto": 20
   },
   {
-    "Nombre": "Explosión de la Planta Nuclear",
-    "Descripcion": "Una explosión en la planta nuclear causa daño masivo.",
-    "Efecto": -40
+    "Nombre": "Cambio de Clima",
+    "Descripcion": "El cambio repentino de clima afecta la energía del atacante, disminuyendo su potencia.",
+    "Efecto": -15
+  },
+  {
+    "Nombre": "Lluvia de Meteoritos",
+    "Descripcion": "Una lluvia de meteoritos potencia la energía cósmica, aumentando el ataque.",
+    "Efecto": 12
+  },
+  {
+    "Nombre": "Oscurecimiento Repentino",
+    "Descripcion": "La falta de luz reduce la efectividad del ataque, dificultando la puntería.",
+    "Efecto": -12
+  },
+  {
+    "Nombre": "Eclipse Solar",
+    "Descripcion": "Un eclipse solar parcial desorienta a los combatientes, reduciendo la precisión y fuerza del ataque.",
+    "Efecto": -7
+  },
+  {
+    "Nombre": "Explosión Controlada",
+    "Descripcion": "Una explosión cercana aumenta la adrenalina y potencia el próximo ataque.",
+    "Efecto": 12
+  },
+  {
+    "Nombre": "Fallo de Comunicación",
+    "Descripcion": "Una interferencia en las comunicaciones provoca un ataque descoordinado y menos efectivo.",
+    "Efecto": -10
+  },
+  {
+    "Nombre": "Lluvia Torrencial",
+    "Descripcion": "La lluvia intensa dificulta la visibilidad y reduce la efectividad del ataque.",
+    "Efecto": -8
+  },
+  {
+    "Nombre": "Descarga de Energía",
+    "Descripcion": "Un pulso de energía en el ambiente recarga el ataque, aumentando su poder significativamente.",
+    "Efecto": 18
+  },
+  {
+    "Nombre": "Rugido Ensordecedor",
+    "Descripcion": "Un rugido ensordecedor asusta al oponente, debilitando su defensa para el próximo ataque.",
+    "Efecto": 10
+  },
+  {
+    "Nombre": "Niebla Espesa",
+    "Descripcion": "Una densa niebla cubre el campo, reduciendo la precisión del próximo ataque.",
+    "Efecto": -9
+  },
+  {
+    "Nombre": "Bendición del Clima",
+    "Descripcion": "Las condiciones climáticas perfectas potencian el ataque, aumentando su fuerza.",
+    "Efecto": 14
+  },
+  {
+    "Nombre": "Carga Electrostática",
+    "Descripcion": "Una carga electrostática imprevista aumenta temporalmente la energía del ataque.",
+    "Efecto": 11
+  },
+  {
+    "Nombre": "Interferencia Electromagnética",
+    "Descripcion": "Una interferencia electromagnética afecta los sistemas, reduciendo la potencia del ataque.",
+    "Efecto": -6
   }
 ]
+

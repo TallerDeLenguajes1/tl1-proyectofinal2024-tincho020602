@@ -199,7 +199,7 @@ private Personaje SeleccionarPersonaje()
             if (turno == 1)
             {
                 MostrarSalud();
-                Console.WriteLine($">>Ataca {Jugador1.Nombre}");
+                Console.WriteLine($">>Ataca {Jugador1.Nombre} - Fuerza de ataque: {Jugador1.Fuerza}");
                 TurnoJugador(Jugador1,Jugador2);
                 turno=2;
                 Console.ReadKey();
@@ -207,7 +207,7 @@ private Personaje SeleccionarPersonaje()
             else
             {
                 MostrarSalud();
-                Console.WriteLine($">>Ataca {Jugador2.Nombre}");
+                Console.WriteLine($">>Ataca {Jugador2.Nombre} - Fuerza de ataque: {Jugador2.Fuerza}");
                 TurnoJugador(Jugador2,Jugador1);
                 turno=1;
                 Console.ReadKey();
@@ -223,4 +223,4 @@ private Personaje SeleccionarPersonaje()
 }
 //Detalles del daño, se incrementa
 //Cambiar json de eventos por eventos que solo influyan en ataque y no en salud
-//
+//Cuando se elige de nuevo en el 1v1, quedan eliminado los jugadores que ya se seleccionaron
