@@ -31,5 +31,38 @@
       "VelocidadDeAtaque": 20
     },
     "fechaVictoria": "2024-08-09"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Marge Bubbie",
+      "Apodo": "Marj",
+      "Edad": 36,
+      "Salud": 15,
+      "Fuerza": 15,
+      "VelocidadDeAtaque": 20
+    },
+    "fechaVictoria": "2024-08-09"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Maggie Simpson",
+      "Apodo": "Mags",
+      "Edad": 1,
+      "Salud": 20,
+      "Fuerza": 5,
+      "VelocidadDeAtaque": 35
+    },
+    "fechaVictoria": "2024-08-09"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Lisa Simpson",
+      "Apodo": "Sabionda",
+      "Edad": 8,
+      "Salud": 8,
+      "Fuerza": 10,
+      "VelocidadDeAtaque": 25
+    },
+    "fechaVictoria": "2024-08-09"
   }
 ]
