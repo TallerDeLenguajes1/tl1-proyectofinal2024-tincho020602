@@ -1,10 +1,9 @@
 using System.IO;
 using System.Text.Json;
-using EspacioPersonajes;
-using EventoAleatorio;
 using datosApi;
 using EspacioHistorial;
-
+using EspacioPersonajes;
+using EventoAleatorio;
 
 namespace EspacioJuego
 {
@@ -60,11 +59,23 @@ namespace EspacioJuego
             return listiDeEvento;
         }
 
-        /*
-            AQUI REALIZO UN CAMBIO
-            en partida1vs1 creo una lista temporal p/q no se eliminen definitivamente los personajes
-            el problema ahora es reajustar sus vidas je--Ya lo corregi
-        */
+        public void MostrarHistorial()
+        {
+            HistorialJson historial = new HistorialJson();
+            List<Ganador> listaDeGanadores = historial.LeerGanadores("Historial.json");
+            if (listaDeGanadores.Count > 0)
+            {
+                Console.WriteLine("\nHistorial de ganadores: \n");
+                foreach (var ganador in listaDeGanadores)
+                {
+                    Console.WriteLine(
+                        ganador.personajeGanador.Nombre + "-" + ganador.fechaVictoria
+                    );
+                }
+            }
+            Console.ReadKey();
+        }
+
         public Personaje SeleccionarPersonaje(List<Personaje> listaTemporal)
         {
             int opcion = 0;
@@ -105,25 +116,28 @@ namespace EspacioJuego
             return elegido;
         }
 
-        public void FinDelDuelo()
+        public Personaje RetornarGanador()
         {
-            HistorialJson historial = new HistorialJson();
-            var apiInsultos= new ConsumirApi();
-            string insulto=apiInsultos.ObtenerInsulto().GetAwaiter().GetResult();
-            Console.Clear();
             if (Jugador1.EstaVivo())
             {
-                Console.WriteLine("Gano Jugador1");
-                Console.WriteLine($"\nEl Jugador2 dice: {insulto}");
-                historial.GuardarGanador(Jugador1,DateTime.Now.Date ,"Historial.json");
+                return Jugador1;
             }
             else
             {
-                Console.WriteLine("Gano Jugador2");
-                Console.WriteLine($"\nEl Jugador1 dice: {insulto}");
-                historial.GuardarGanador(Jugador2,DateTime.Now.Date ,"Historial.json");
-                
+                return Jugador2;
             }
+        }
+
+        public void FinDelDuelo()
+        {
+            Personaje ganador = RetornarGanador();
+            HistorialJson historial = new HistorialJson();
+            var apiInsultos = new ConsumirApi();
+            string insulto = apiInsultos.ObtenerInsulto().GetAwaiter().GetResult();
+            Console.Clear();
+            Console.WriteLine($"Gano {ganador.Nombre}");
+            Console.WriteLine($"\nEl perdedor dice: {insulto}");
+            historial.GuardarGanador(ganador, DateTime.Now.Date, "Historial.json");
             Console.ReadKey();
         }
 
@@ -151,7 +165,7 @@ namespace EspacioJuego
                         Partida1vs1();
                         break;
                     case 3:
-                        Console.WriteLine("Mostrar Ranking...");
+                        MostrarHistorial();
                         break;
                     case 4:
                         Console.WriteLine("Salir...");
@@ -162,8 +176,6 @@ namespace EspacioJuego
                 }
             } while (opcion != 4);
         }
-
-
 
         private void Partida1vs1()
         {
@@ -185,32 +197,36 @@ namespace EspacioJuego
             // Crear una instancia de Random
             Random random = new Random();
             // Obtener un índice aleatorio
-            while (listaPersonajeDuelo.Count>0 && Jugador1.EstaVivo())
-            {                
-            Jugador1.RestaurarVida();
-            int indiceAleatorio = random.Next(listaPersonajeDuelo.Count);
-            Jugador2 = listaPersonajeDuelo[indiceAleatorio];
-            listaPersonajeDuelo.Remove(Jugador2);
-            Duelo();
+            while (listaPersonajeDuelo.Count > 0 && Jugador1.EstaVivo())
+            {
+                Jugador1.RestaurarVida();
+                int indiceAleatorio = random.Next(listaPersonajeDuelo.Count);
+                Jugador2 = listaPersonajeDuelo[indiceAleatorio];
+                listaPersonajeDuelo.Remove(Jugador2);
+                Duelo();
             }
             FinDelDuelo();
         }
 
         private void TurnoJugador(Personaje atacante, Personaje defensor)
         {
-            Evento eventoRandom = GenerarEvento();
-            Console.WriteLine($"Ocurrio un evento: {eventoRandom.Nombre}\n");
-            Console.WriteLine($"`{eventoRandom.Descripcion}`\n");
-            if (eventoRandom.Efecto > 0)
+            Evento eventoRandom = null;
+            if (new Random().Next(1, 4) == 1)
             {
-                Console.WriteLine($"El ataque se incrementa: {eventoRandom.Efecto}\n");
-            }
-            else
-            {
-                Console.WriteLine($"El ataque se reduce: {eventoRandom.Efecto}\n");
+                eventoRandom = GenerarEvento();
+                Console.WriteLine($"Ocurrio un evento: {eventoRandom.Nombre}\n");
+                Console.WriteLine($"`{eventoRandom.Descripcion}`\n");
+                if (eventoRandom.Efecto > 0)
+                {
+                    Console.WriteLine($"El ataque se incrementa: {eventoRandom.Efecto}\n");
+                }
+                else
+                {
+                    Console.WriteLine($"El ataque se reduce: {eventoRandom.Efecto}\n");
+                }
             }
             int danio = atacante.Atacar(eventoRandom);
-                Console.WriteLine($"La Fuerza de ataque total es: {danio}\n");
+            Console.WriteLine($"La Fuerza de ataque total es: {danio}\n");
             defensor.Defender(danio);
         }
 
@@ -226,8 +242,6 @@ namespace EspacioJuego
             );
         }
 
-        
-
         public void Duelo()
         {
             int turno = RetornarTurno();
@@ -242,7 +256,7 @@ namespace EspacioJuego
                 {
                     MostrarSalud();
                     Console.WriteLine(
-                        $">>Ataca {Jugador1.Nombre} - Fuerza de ataque: {Jugador1.Fuerza} - Velocidad de ataque: {Jugador1.VelocidadDeAtaque}"
+                        $">>Ataca {Jugador1.Nombre} - Fuerza de ataque: {Jugador1.Fuerza} + Velocidad de ataque: {Jugador1.VelocidadDeAtaque}"
                     );
                     TurnoJugador(Jugador1, Jugador2);
                     turno = 2;
@@ -252,13 +266,16 @@ namespace EspacioJuego
                 {
                     MostrarSalud();
                     Console.WriteLine(
-                        $">>Ataca {Jugador2.Nombre} - Fuerza de ataque: {Jugador2.Fuerza} - Velocidad de ataque: {Jugador2.VelocidadDeAtaque}"
+                        $">>Ataca {Jugador2.Nombre} - Fuerza de ataque: {Jugador2.Fuerza} + Velocidad de ataque: {Jugador2.VelocidadDeAtaque}"
                     );
                     TurnoJugador(Jugador2, Jugador1);
                     turno = 1;
                     Console.ReadKey();
                 }
             }
+            Personaje ganador = RetornarGanador();
+            Console.WriteLine($"Ganó {ganador.Nombre}.");
+            Console.ReadKey();
         }
     }
 }

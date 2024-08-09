@@ -17,7 +17,14 @@ namespace EspacioPersonajes
         // Constructor
         public Personaje() { }
 
-        public Personaje(string nombre, string apodo, int edad, int salud, int fuerza, int velocidad)
+        public Personaje(
+            string nombre,
+            string apodo,
+            int edad,
+            int salud,
+            int fuerza,
+            int velocidad
+        )
         {
             Nombre = nombre;
             Apodo = apodo;
@@ -45,7 +52,15 @@ namespace EspacioPersonajes
 
         public int Atacar(Evento eventoAleatorio)
         {
-            int danio = (Fuerza + eventoAleatorio.Efecto + VelocidadDeAtaque);
+            int danio=0;
+            if (eventoAleatorio == null)
+            {
+                danio = (Fuerza + VelocidadDeAtaque);
+            }
+            else
+            {
+                danio = (Fuerza + eventoAleatorio.Efecto + VelocidadDeAtaque);
+            }
             if (danio < 0)
             {
                 danio = 0;

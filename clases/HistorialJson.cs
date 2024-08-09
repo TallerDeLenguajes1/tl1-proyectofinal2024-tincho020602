@@ -67,6 +67,7 @@ namespace EspacioHistorial
             catch (FileNotFoundException)
             {
                 Console.WriteLine($"Archivo '{nombreArchivo}' no encontrado. No hay ganadores registrados.");
+                Console.WriteLine("Debe jugar al menos una partida para guardar un ganador.");
             }
             catch (JsonException jsonEx)
             {
