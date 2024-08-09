@@ -152,5 +152,71 @@
       "VelocidadDeAtaque": 20
     },
     "fechaVictoria": "2024-08-09"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Marge Bubbie",
+      "Apodo": "Marj",
+      "Edad": 36,
+      "Salud": 10,
+      "Fuerza": 15,
+      "VelocidadDeAtaque": 20
+    },
+    "fechaVictoria": "2024-08-09"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Apu Nahasapeemapetilon",
+      "Apodo": "Apu",
+      "Edad": 45,
+      "Salud": 55,
+      "Fuerza": 30,
+      "VelocidadDeAtaque": 35
+    },
+    "fechaVictoria": "2024-08-09"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Mr. Burns",
+      "Apodo": "Monty",
+      "Edad": 104,
+      "Salud": 12,
+      "Fuerza": 15,
+      "VelocidadDeAtaque": 15
+    },
+    "fechaVictoria": "2024-08-09"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Ned Flanders",
+      "Apodo": "Neddy",
+      "Edad": 60,
+      "Salud": 73,
+      "Fuerza": 35,
+      "VelocidadDeAtaque": 35
+    },
+    "fechaVictoria": "2024-08-09"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Krusty el payaso",
+      "Apodo": "Krusty",
+      "Edad": 55,
+      "Salud": 20,
+      "Fuerza": 40,
+      "VelocidadDeAtaque": 15
+    },
+    "fechaVictoria": "2024-08-09"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Mr. Burns",
+      "Apodo": "Monty",
+      "Edad": 104,
+      "Salud": 30,
+      "Fuerza": 15,
+      "VelocidadDeAtaque": 15
+    },
+    "fechaVictoria": "2024-08-09"
   }
 ]
