@@ -4,35 +4,40 @@
     "Apodo": "Homero",
     "Edad": 39,
     "Salud": 100,
-    "Fuerza": 40
+    "Fuerza": 40,
+    "VelocidadDeAtaque": 5
   },
   {
     "Nombre": "Bart Simpson",
     "Apodo": "El Barto",
     "Edad": 10,
     "Salud": 100,
-    "Fuerza": 20
+    "Fuerza": 20,
+    "VelocidadDeAtaque": 20
   },
   {
     "Nombre": "Lisa Simpson",
     "Apodo": "Sabionda",
     "Edad": 8,
     "Salud": 100,
-    "Fuerza": 10
+    "Fuerza": 10,
+    "VelocidadDeAtaque": 25
   },
   {
     "Nombre": "Marge Bubbie",
     "Apodo": "Marj",
     "Edad": 36,
     "Salud": 100,
-    "Fuerza": 15
+    "Fuerza": 15,
+    "VelocidadDeAtaque": 20
   },
   {
     "Nombre": "Maggie Simpson",
     "Apodo": "Mags",
     "Edad": 1,
     "Salud": 100,
-    "Fuerza": 5
+    "Fuerza": 5,
+    "VelocidadDeAtaque": 35
   }
 ]
  
