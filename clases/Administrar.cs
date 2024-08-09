@@ -3,6 +3,8 @@ using System.Text.Json;
 using EspacioPersonajes;
 using EventoAleatorio;
 using datosApi;
+using EspacioHistorial;
+
 
 namespace EspacioJuego
 {
@@ -105,6 +107,7 @@ namespace EspacioJuego
 
         public void FinDelDuelo()
         {
+            HistorialJson historial = new HistorialJson();
             var apiInsultos= new ConsumirApi();
             string insulto=apiInsultos.ObtenerInsulto().GetAwaiter().GetResult();
             Console.Clear();
@@ -112,13 +115,14 @@ namespace EspacioJuego
             {
                 Console.WriteLine("Gano Jugador1");
                 Console.WriteLine($"\nEl Jugador2 dice: {insulto}");
-                //Jugador1.RegenerarVida();
+                historial.GuardarGanador(Jugador1,DateTime.Now.Date ,"Historial.json");
             }
             else
             {
                 Console.WriteLine("Gano Jugador2");
                 Console.WriteLine($"\nEl Jugador1 dice: {insulto}");
-                //Jugador2.RegenerarVida();
+                historial.GuardarGanador(Jugador2,DateTime.Now.Date ,"Historial.json");
+                
             }
             Console.ReadKey();
         }
@@ -159,6 +163,8 @@ namespace EspacioJuego
             } while (opcion != 4);
         }
 
+
+
         private void Partida1vs1()
         {
             // Hacer una copia temporal de la lista de personajes
@@ -169,6 +175,7 @@ namespace EspacioJuego
             Console.WriteLine($"Elegir personaje para el Jugador2: ");
             Jugador2 = SeleccionarPersonaje(listaTemporalDePersonajes);
             Duelo();
+            FinDelDuelo();
         }
 
         private void Partida1vsCPU()
@@ -219,6 +226,8 @@ namespace EspacioJuego
             );
         }
 
+        
+
         public void Duelo()
         {
             int turno = RetornarTurno();
@@ -250,8 +259,6 @@ namespace EspacioJuego
                     Console.ReadKey();
                 }
             }
-            // Mostrar Ganador
-            FinDelDuelo();
         }
     }
 }

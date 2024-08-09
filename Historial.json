@@ -1,0 +1,13 @@
+[
+  {
+    "personajeGanador": {
+      "Nombre": "Bart Simpson",
+      "Apodo": "El Barto",
+      "Edad": 10,
+      "Salud": 11,
+      "Fuerza": 20,
+      "VelocidadDeAtaque": 20
+    },
+    "fechaVictoria": "2024-08-08"
+  }
+]
