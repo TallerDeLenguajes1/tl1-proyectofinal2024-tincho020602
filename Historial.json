@@ -64,5 +64,93 @@
       "VelocidadDeAtaque": 25
     },
     "fechaVictoria": "2024-08-09"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Homero Simpson",
+      "Apodo": "Homero",
+      "Edad": 39,
+      "Salud": 14,
+      "Fuerza": 40,
+      "VelocidadDeAtaque": 5
+    },
+    "fechaVictoria": "2024-08-09"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Ned Flanders",
+      "Apodo": "Neddy",
+      "Edad": 60,
+      "Salud": 65,
+      "Fuerza": 35,
+      "VelocidadDeAtaque": 35
+    },
+    "fechaVictoria": "2024-08-09"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Marge Bubbie",
+      "Apodo": "Marj",
+      "Edad": 36,
+      "Salud": 40,
+      "Fuerza": 15,
+      "VelocidadDeAtaque": 20
+    },
+    "fechaVictoria": "2024-08-09"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Marge Bubbie",
+      "Apodo": "Marj",
+      "Edad": 36,
+      "Salud": 15,
+      "Fuerza": 15,
+      "VelocidadDeAtaque": 20
+    },
+    "fechaVictoria": "2024-08-09"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Lisa Simpson",
+      "Apodo": "Sabionda",
+      "Edad": 8,
+      "Salud": 30,
+      "Fuerza": 10,
+      "VelocidadDeAtaque": 25
+    },
+    "fechaVictoria": "2024-08-09"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Bart Simpson",
+      "Apodo": "El Barto",
+      "Edad": 10,
+      "Salud": 42,
+      "Fuerza": 20,
+      "VelocidadDeAtaque": 20
+    },
+    "fechaVictoria": "2024-08-09"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Marge Bubbie",
+      "Apodo": "Marj",
+      "Edad": 36,
+      "Salud": 2,
+      "Fuerza": 15,
+      "VelocidadDeAtaque": 20
+    },
+    "fechaVictoria": "2024-08-09"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Marge Bubbie",
+      "Apodo": "Marj",
+      "Edad": 36,
+      "Salud": 40,
+      "Fuerza": 15,
+      "VelocidadDeAtaque": 20
+    },
+    "fechaVictoria": "2024-08-09"
   }
 ]

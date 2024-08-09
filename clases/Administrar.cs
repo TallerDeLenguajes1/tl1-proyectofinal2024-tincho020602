@@ -85,6 +85,7 @@ namespace EspacioJuego
                     );
                 }
             }
+            Console.WriteLine("\nOprima una tecla para continuar...");
             Console.ReadKey();
         }
 
@@ -156,6 +157,7 @@ namespace EspacioJuego
             Console.WriteLine($"\nEl perdedor dice: {insulto}");
             //Guardo el personaje ganador junto con la fecha del duelo en el json
             historial.GuardarGanador(ganador, DateTime.Now.Date, "Historial.json");
+            Console.WriteLine("\nOprima una tecla para continuar...");
             Console.ReadKey();
         }
 
@@ -186,7 +188,7 @@ namespace EspacioJuego
                         MostrarHistorial();
                         break;
                     case 4:
-                        Console.WriteLine("Salir...");
+                        Console.WriteLine("Saliendo...");
                         Environment.Exit(0);
                         break;
                     default:
@@ -248,6 +250,7 @@ namespace EspacioJuego
             Console.WriteLine($"La Fuerza de ataque total es: {danio}\n");
             //El personaje defensor intenta defenderse, reduciendo su salud según el daño calculado
             defensor.Defender(danio);
+            Console.WriteLine("\nOprima una tecla para continuar...");
         }
 
         private Evento GenerarEvento()
@@ -295,6 +298,7 @@ namespace EspacioJuego
             }
             Personaje ganador = RetornarGanador();
             Console.WriteLine($"Ganó {ganador.Nombre}.");
+            Console.WriteLine("\nOprima una tecla para continuar...");
             Console.ReadKey();
         }
     }
