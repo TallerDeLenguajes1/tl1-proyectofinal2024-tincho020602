@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 class ConsumirApi
 {
-    public async Task<string>  ObtenerInsulto()
+    public async Task<string> ObtenerInsulto()
     {
         string ruta = "https://evilinsult.com/generate_insult.php?lang=es&type=json";
         try
@@ -28,13 +28,12 @@ class ConsumirApi
         }
         catch (Exception ex)
         {
-            string[] insultosRespaldo = {"tarado", "anda payá bobo","peruano"};
+            string[] insultosRespaldo = { "tarado", "anda payá bobo", "peruano" };
             return insultosRespaldo[new Random().Next(insultosRespaldo.Count())];
         }
     }
 }
 
-// Root myDeserializedClass = JsonSerializer.Deserialize<Root>(myJsonResponse);
 public class InsultosRoot
 {
     [JsonPropertyName("insult")]

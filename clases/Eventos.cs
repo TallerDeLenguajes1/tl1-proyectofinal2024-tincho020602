@@ -7,7 +7,6 @@ namespace EventoAleatorio
 
         public int Efecto { get; set; } //Valor + o -
 
-
         //Constructor
         public Evento(string nombre, string descripcion, int efecto)
         {
@@ -16,5 +15,4 @@ namespace EventoAleatorio
             Efecto = efecto;
         }
     }
-
 }

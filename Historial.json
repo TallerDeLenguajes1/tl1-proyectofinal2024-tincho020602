@@ -1,110 +1,33 @@
 [
   {
     "personajeGanador": {
-      "Nombre": "Bart Simpson",
-      "Apodo": "El Barto",
-      "Edad": 10,
-      "Salud": 3,
-      "Fuerza": 20,
-      "VelocidadDeAtaque": 20
+      "Nombre": "Krusty el payaso",
+      "Apodo": "Krusty",
+      "Edad": 55,
+      "Salud": 20,
+      "Fuerza": 40,
+      "VelocidadDeAtaque": 15
     },
-    "fechaVictoria": "2024-08-08"
+    "fechaVictoria": "2024-08-09"
   },
   {
     "personajeGanador": {
       "Nombre": "Lisa Simpson",
       "Apodo": "Sabionda",
       "Edad": 8,
-      "Salud": 7,
+      "Salud": 30,
       "Fuerza": 10,
       "VelocidadDeAtaque": 25
     },
-    "fechaVictoria": "2024-08-08"
-  },
-  {
-    "personajeGanador": {
-      "Nombre": "Homero Simpson",
-      "Apodo": "Homero",
-      "Edad": 39,
-      "Salud": 38,
-      "Fuerza": 40,
-      "VelocidadDeAtaque": 5
-    },
-    "fechaVictoria": "2024-08-08"
-  },
-  {
-    "personajeGanador": {
-      "Nombre": "Homero Simpson",
-      "Apodo": "Homero",
-      "Edad": 39,
-      "Salud": 40,
-      "Fuerza": 40,
-      "VelocidadDeAtaque": 5
-    },
-    "fechaVictoria": "2024-08-08"
+    "fechaVictoria": "2024-08-09"
   },
   {
     "personajeGanador": {
       "Nombre": "Marge Bubbie",
       "Apodo": "Marj",
       "Edad": 36,
-      "Salud": 5,
+      "Salud": 70,
       "Fuerza": 15,
-      "VelocidadDeAtaque": 20
-    },
-    "fechaVictoria": "2024-08-08"
-  },
-  {
-    "personajeGanador": {
-      "Nombre": "Homero Simpson",
-      "Apodo": "Homero",
-      "Edad": 39,
-      "Salud": 20,
-      "Fuerza": 40,
-      "VelocidadDeAtaque": 5
-    },
-    "fechaVictoria": "2024-08-08"
-  },
-  {
-    "personajeGanador": {
-      "Nombre": "Bart Simpson",
-      "Apodo": "El Barto",
-      "Edad": 10,
-      "Salud": 12,
-      "Fuerza": 20,
-      "VelocidadDeAtaque": 20
-    },
-    "fechaVictoria": "2024-08-08"
-  },
-  {
-    "personajeGanador": {
-      "Nombre": "Bart Simpson",
-      "Apodo": "El Barto",
-      "Edad": 10,
-      "Salud": 57,
-      "Fuerza": 20,
-      "VelocidadDeAtaque": 20
-    },
-    "fechaVictoria": "2024-08-08"
-  },
-  {
-    "personajeGanador": {
-      "Nombre": "Bart Simpson",
-      "Apodo": "El Barto",
-      "Edad": 10,
-      "Salud": 30,
-      "Fuerza": 20,
-      "VelocidadDeAtaque": 20
-    },
-    "fechaVictoria": "2024-08-08"
-  },
-  {
-    "personajeGanador": {
-      "Nombre": "Bart Simpson",
-      "Apodo": "El Barto",
-      "Edad": 10,
-      "Salud": 5,
-      "Fuerza": 20,
       "VelocidadDeAtaque": 20
     },
     "fechaVictoria": "2024-08-09"

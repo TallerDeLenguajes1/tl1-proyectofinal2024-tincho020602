@@ -44,9 +44,10 @@ namespace EspacioJuego
             List<Personaje> listita = JsonSerializer.Deserialize<List<Personaje>>(personajes);
             return listita;
         }
-        
+
         private int RetornarTurno()
         {
+            //retorna 1 o 2
             return new Random().Next(1, 3);
         }
 
@@ -62,6 +63,7 @@ namespace EspacioJuego
         public void MostrarHistorial()
         {
             HistorialJson historial = new HistorialJson();
+            //leo la lista de ganadores que se encuentra en Historial.json
             List<Ganador> listaDeGanadores = historial.LeerGanadores("Historial.json");
             if (listaDeGanadores.Count > 0)
             {
@@ -86,8 +88,10 @@ namespace EspacioJuego
             do
             {
                 int indice = 0;
+                // Itera a través de la lista temporal de personajes
                 foreach (var personaje in listaTemporal)
                 {
+                    //Restauro la vida a cada personaje antes de cada duelo
                     personaje.RestaurarVida();
                     Console.WriteLine(
                         $"{indice}) - {personaje.Nombre} - Apodo: {personaje.Apodo} - Edad: {personaje.Edad}"
@@ -95,7 +99,7 @@ namespace EspacioJuego
                     Console.WriteLine(
                         $"     Salud: {personaje.Salud} - Fuerza: {personaje.Fuerza} - Velocidad De Ataque: {personaje.VelocidadDeAtaque}"
                     );
-                    Console.WriteLine("------------------------------");
+                    Console.WriteLine("------------------------------------------------------");
                     indice++;
                 }
                 Console.WriteLine("Opcion: ");
@@ -104,7 +108,7 @@ namespace EspacioJuego
                 opcionValida =
                     int.TryParse(opcionIngresada, out opcion)
                     && (opcion >= 0 && opcion < listaTemporal.Count);
-
+                //Si ingreso bien la opcion del personaje, lo saco de la lista temporal
                 if (opcionValida)
                 {
                     elegido = listaTemporal[opcion];
@@ -118,6 +122,7 @@ namespace EspacioJuego
 
         public Personaje RetornarGanador()
         {
+            //Luego del duelo, verifico quien sobrevivio
             if (Jugador1.EstaVivo())
             {
                 return Jugador1;
@@ -130,13 +135,16 @@ namespace EspacioJuego
 
         public void FinDelDuelo()
         {
+            //Guardo en ganador al jugador que sobrevivio al duelo
             Personaje ganador = RetornarGanador();
             HistorialJson historial = new HistorialJson();
             var apiInsultos = new ConsumirApi();
+            //Llamo al método ObtenerInsulto de manera asíncrona y espera el resultado (un insulto) de forma sincrónica
             string insulto = apiInsultos.ObtenerInsulto().GetAwaiter().GetResult();
             Console.Clear();
             Console.WriteLine($"Gano {ganador.Nombre}");
             Console.WriteLine($"\nEl perdedor dice: {insulto}");
+            //Guardo el personaje ganador junto con la fecha del duelo en el json
             historial.GuardarGanador(ganador, DateTime.Now.Date, "Historial.json");
             Console.ReadKey();
         }
@@ -182,9 +190,9 @@ namespace EspacioJuego
             // Hacer una copia temporal de la lista de personajes
             List<Personaje> listaTemporalDePersonajes = new List<Personaje>(ListaDePersonajes);
 
-            Console.WriteLine($"Elegir personaje para el Jugador1: ");
+            Console.WriteLine($"Elegir personaje para el Jugador 1: ");
             Jugador1 = SeleccionarPersonaje(listaTemporalDePersonajes);
-            Console.WriteLine($"Elegir personaje para el Jugador2: ");
+            Console.WriteLine($"Elegir personaje para el Jugador 2: ");
             Jugador2 = SeleccionarPersonaje(listaTemporalDePersonajes);
             Duelo();
             FinDelDuelo();
@@ -199,7 +207,7 @@ namespace EspacioJuego
             // Obtener un índice aleatorio
             while (listaPersonajeDuelo.Count > 0 && Jugador1.EstaVivo())
             {
-                Jugador1.RestaurarVida();
+                Jugador1.RestaurarVida(); //Restauro la vida antes de c/duelo
                 int indiceAleatorio = random.Next(listaPersonajeDuelo.Count);
                 Jugador2 = listaPersonajeDuelo[indiceAleatorio];
                 listaPersonajeDuelo.Remove(Jugador2);
@@ -211,6 +219,7 @@ namespace EspacioJuego
         private void TurnoJugador(Personaje atacante, Personaje defensor)
         {
             Evento eventoRandom = null;
+            //Genero un numero random entre 1 y 3, si el numero=1, ocurrira un evento aleatorio durante el duelo
             if (new Random().Next(1, 4) == 1)
             {
                 eventoRandom = GenerarEvento();
@@ -227,6 +236,7 @@ namespace EspacioJuego
             }
             int danio = atacante.Atacar(eventoRandom);
             Console.WriteLine($"La Fuerza de ataque total es: {danio}\n");
+            //El personaje defensor intenta defenderse, reduciendo su salud según el daño calculado
             defensor.Defender(danio);
         }
 
@@ -279,4 +289,3 @@ namespace EspacioJuego
         }
     }
 }
-

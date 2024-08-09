@@ -26,14 +26,19 @@ namespace EspacioHistorial
         {
             try
             {
-                List<Ganador> ganadores = Existe(nombreArchivo) ? LeerGanadores(nombreArchivo) : new List<Ganador>();
+                /* Verifica si el archivo existe. Si existe, lo lee para obtener la lista de ganadores anteriores
+                Si no existe, crea una nueva lista vacía de ganadores*/
+                List<Ganador> ganadores = Existe(nombreArchivo)
+                    ? LeerGanadores(nombreArchivo)
+                    : new List<Ganador>();
 
-                // Convertir la fecha a una cadena en el formato "yyyy-MM-dd"
+                //Convierte la fecha a una cadena en el formato "yyyy-MM-dd"
                 string fechaFormateada = fecha.ToString("yyyy-MM-dd");
 
-                ganadores.Add(new Ganador(ganador, fechaFormateada));
+                ganadores.Add(new Ganador(ganador, fechaFormateada)); //Agrego el ganador a la lista de ganadores
 
                 var opciones = new JsonSerializerOptions { WriteIndented = true };
+                //creo un archivo nuevo o sobrescribo el existente
                 using (var archivo = new FileStream(nombreArchivo, FileMode.Create))
                 {
                     using (var strWriter = new StreamWriter(archivo))
@@ -52,13 +57,17 @@ namespace EspacioHistorial
 
         public List<Ganador> LeerGanadores(string nombreArchivo)
         {
+            //Crea una nueva lista de ganadores para almacenar los datos leídos del archivo
             List<Ganador> ganadores = new List<Ganador>();
             try
             {
+                //abre el archivo en modo de lectura
                 using (var archivoOpen = new FileStream(nombreArchivo, FileMode.Open))
                 {
+                    //Usa un StreamReader para leer todo el contenido del archivo
                     using (var strReader = new StreamReader(archivoOpen))
                     {
+                        //Lee el contenido del archivo JSON como una cadena
                         string json = strReader.ReadToEnd();
                         ganadores = JsonSerializer.Deserialize<List<Ganador>>(json);
                     }
@@ -66,12 +75,16 @@ namespace EspacioHistorial
             }
             catch (FileNotFoundException)
             {
-                Console.WriteLine($"Archivo '{nombreArchivo}' no encontrado. No hay ganadores registrados.");
+                Console.WriteLine(
+                    $"Archivo '{nombreArchivo}' no encontrado. No hay ganadores registrados."
+                );
                 Console.WriteLine("Debe jugar al menos una partida para guardar un ganador.");
             }
             catch (JsonException jsonEx)
             {
-                Console.WriteLine($"Error al deserializar el archivo '{nombreArchivo}': {jsonEx.Message}");
+                Console.WriteLine(
+                    $"Error al deserializar el archivo '{nombreArchivo}': {jsonEx.Message}"
+                );
             }
             catch (Exception e)
             {
@@ -84,11 +97,13 @@ namespace EspacioHistorial
         {
             try
             {
+                //Verifico si el archivo existe y que tenga un tamaño mayor a 0 bytes.
                 return File.Exists(nombreArchivo) && new FileInfo(nombreArchivo).Length > 0;
             }
             catch (Exception e)
             {
                 Console.WriteLine($"Error al verificar el archivo '{nombreArchivo}': {e.Message}");
+                //Retorna false si ocurre algún error durante la verificación.
                 return false;
             }
         }

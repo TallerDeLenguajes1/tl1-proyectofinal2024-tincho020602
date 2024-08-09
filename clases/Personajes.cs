@@ -11,9 +11,6 @@ namespace EspacioPersonajes
         public int Fuerza { get; set; }
         public int VelocidadDeAtaque { get; set; }
 
-        //public bool EsCPU { get; set; }
-        //public int CantBebidas { get; set; }
-
         // Constructor
         public Personaje() { }
 
@@ -32,8 +29,6 @@ namespace EspacioPersonajes
             Salud = salud;
             Fuerza = fuerza;
             VelocidadDeAtaque = velocidad;
-            //EsCPU = cpu;
-            //CantBebidas= 1;
         }
 
         public void RestaurarVida()
@@ -46,23 +41,18 @@ namespace EspacioPersonajes
             Salud -= danio;
             if (Salud < 0)
             {
+                //Esto hago p/que la salud no quede con un valor negativo
                 Salud = 0;
             }
         }
 
         public int Atacar(Evento eventoAleatorio)
         {
-            int danio=0;
-            if (eventoAleatorio == null)
-            {
-                danio = (Fuerza + VelocidadDeAtaque);
-            }
-            else
-            {
-                danio = (Fuerza + eventoAleatorio.Efecto + VelocidadDeAtaque);
-            }
+             int efecto = (eventoAleatorio != null) ? eventoAleatorio.Efecto : 0;
+            int danio = (Fuerza + efecto + VelocidadDeAtaque);
             if (danio < 0)
             {
+                //Esto hago p/que el daño no quede con un valor negativo
                 danio = 0;
             }
             return danio;
