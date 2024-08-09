@@ -97,5 +97,16 @@
       "VelocidadDeAtaque": 20
     },
     "fechaVictoria": "2024-08-08"
+  },
+  {
+    "personajeGanador": {
+      "Nombre": "Bart Simpson",
+      "Apodo": "El Barto",
+      "Edad": 10,
+      "Salud": 5,
+      "Fuerza": 20,
+      "VelocidadDeAtaque": 20
+    },
+    "fechaVictoria": "2024-08-09"
   }
 ]

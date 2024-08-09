@@ -44,7 +44,7 @@ namespace EspacioJuego
             List<Personaje> listita = JsonSerializer.Deserialize<List<Personaje>>(personajes);
             return listita;
         }
-
+        
         private int RetornarTurno()
         {
             return new Random().Next(1, 3);
@@ -279,8 +279,4 @@ namespace EspacioJuego
         }
     }
 }
-/*
--Guardar datos
--Mostrar Ranking
--Estetica
--Agregar Funcionalidades*/
+
