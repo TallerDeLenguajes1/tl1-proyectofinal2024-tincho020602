@@ -7,7 +7,7 @@ class ConsumirApi
 {
     public async Task<string>  ObtenerInsulto()
     {
-        string ruta = "https://evilinsult/generate_insult.php?lang=es&type=json";
+        string ruta = "https://evilinsult.com/generate_insult.php?lang=es&type=json";
         try
         {
             // Instancio un nuevo cliente HTTP

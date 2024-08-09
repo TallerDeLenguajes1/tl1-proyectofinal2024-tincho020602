@@ -258,10 +258,5 @@ namespace EspacioJuego
 /*
 -Guardar datos
 -Mostrar Ranking
--Api
 -Estetica
 -Agregar Funcionalidades*/
-//Genera insultos: https://evilinsult.com/generate_insult.php?lang=en&type=json
-//Cosas al azar
-//Generador de insultos malvados
-//En "Análisis de texto" estan los traductores
